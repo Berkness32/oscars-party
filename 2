@@ -1,0 +1,71 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+
+export const metadata = {
+  title: "Questions",
+  description: "A quiz page about the movie 'The Brutalist'"
+};
+
+export default function QuestionsPage() {
+  // State to track which answer the user selected
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+
+  // The correct answer
+  const correctAnswer = "Brady Corbet";
+
+  // Possible choices
+  const choices = ["Brady Corbet", "Christopher Nolan", "David Lynch", "Jane Campion"];
+
+  // Handle user picking an answer
+  function handleAnswerClick(choice) {
+    setSelectedAnswer(choice);
+  }
+
+  return (
+    <main style={{ padding: "1rem" }}>
+      <h1>Who directed &quot;The Brutalist&quot;?</h1>
+
+      {/* Display the poster (make sure the image is in /public) */}
+      <div style={{ marginBottom: "1rem" }}>
+        <Image
+          src="/Brutalist.jpg"
+          alt="The Brutalist Movie Poster"
+          width={300}   // adjust as needed
+          height={450}  // adjust as needed
+        />
+      </div>
+
+      {/* Display choices */}
+      <ul style={{ listStyle: "none", padding: 0 }}>
+        {choices.map((choice) => {
+          // Determine background color based on selection
+          let bgColor = "#eee"; // default
+          if (selectedAnswer === choice) {
+            // If user selected this choice
+            bgColor = choice === correctAnswer ? "green" : "red";
+          }
+
+          return (
+            <li key={choice} style={{ margin: "0.5rem 0" }}>
+              <button
+                onClick={() => handleAnswerClick(choice)}
+                style={{
+                  padding: "0.5rem 1rem",
+                  backgroundColor: bgColor,
+                  color: bgColor === "#eee" ? "#000" : "#fff",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                {choice}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </main>
+  );
+}
+

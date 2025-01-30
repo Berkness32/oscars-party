@@ -11,6 +11,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        ballet: ["var(--font-ballet)", "cursive"],
+        monteCarlo: ["var(--font-monteCarlo)", "cursive"],
+      }
     },
   },
   plugins: [],
