@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { auth, googleSignIn, loginUser, logoutUser } from "../lib/auth";
+import { auth, googleSignIn, loginUser, logoutUser, registerUser } from "../lib/auth";
 import Link from "next/link";
 import Image from "next/image";
 import { onAuthStateChanged, User } from "firebase/auth";
@@ -71,7 +71,7 @@ useEffect(() => {
   // Login with email & password
   const handleEmailLogin = async () => {
     try {
-      await loginUser(email, password);
+      await registerUser(email, password);
     } catch (error) {
       alert("Login failed: " + error.message);
     }
