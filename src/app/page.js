@@ -86,7 +86,7 @@ useEffect(() => {
     return (
 
       <div className="flex flex-col items-center justify-center bg-amber-100 text-black h-screen">
-        <button onClick={handleLogout} className="absolute flex top-0 right-5 mt-4 px-4 py-2 border border-black  rounded-md">
+        <button onClick={handleLogout} className="absolute flex top-0 right-5 mt-4 px-4 py-2 hover:border hover:border-black  hover:rounded-md">
           <Image
             src={"/logout.svg"}
             alt="logout"
@@ -98,7 +98,6 @@ useEffect(() => {
               md:w-12 md:h-12
             '
           />
-          <p className="text-2xl md:text-5xl sm:text-4xl font-bold px-4 hover:underline">Sign Out</p>
         </button>
 
         <div className='flex items-center mx-8'>
