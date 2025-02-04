@@ -101,8 +101,8 @@ export default function VotingPage() {
             width={30}
             height={30}
             className="cursor-pointer 
-              w-5 h-5     // Base: smaller for very small screens (iPhone in portrait)
-              sm:w-6 sm:h-6 // From 640px up, slightly larger
+              w-6 h-6     // Base: smaller for very small screens (iPhone in portrait)
+              sm:w-7 sm:h-7 // From 640px up, slightly larger
               md:w-8 md:h-8 // And so on...
               "
           />

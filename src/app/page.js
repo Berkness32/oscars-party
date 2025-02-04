@@ -46,7 +46,7 @@ useEffect(() => {
   return () => unsubscribe(); // Cleanup on unmount
 }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="bg-amber-100">Loading...</p>;
 
   const handleSavePhoneNumber = async () => {
     const success = await savePhoneNumber(number);
@@ -92,8 +92,13 @@ useEffect(() => {
             alt="logout"
             width={25}
             height={25}
+            className='
+              w-6 h-6
+              sm:w-8 sm:h-8
+              md:w-12 md:h-12
+            '
           />
-          <p className="px-4 hover:underline">Sign Out</p>
+          <p className="text-2xl md:text-5xl sm:text-4xl font-bold px-4 hover:underline">Sign Out</p>
         </button>
 
         <div className='flex items-center mx-8'>
@@ -110,8 +115,8 @@ useEffect(() => {
           />
           <h1 className="text-2xl md:text-5xl sm:text-4xl font-bold px-4"> 2025 OSCARS PICKS </h1>
         </div>
-        <p className="font-monteCarlo">I am planning to add in some social features soon so we can see 
-            each other&apos;s picks and letterboxd accounts</p>
+        <p className="font-monteCarlo">I am planning to add in some social features soon so we can</p> 
+         <p className="font-monteCarlo">see each other&apos;s picks and letterboxd accounts</p>
 
         {hasPhoneNumber ? (
           <div className="flex mt-10">
